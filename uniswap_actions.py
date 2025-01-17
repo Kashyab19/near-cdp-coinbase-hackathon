@@ -21,11 +21,14 @@ def get_uniswap_quote(
     Returns:
         str: Quote details
     """
-    quote = wallet.get_uniswap_quote(
-        token_in=token_in,
-        token_out=token_out, 
-        amount_in=amount_in,
-        amount_in_wei=amount_in_wei
-    )
-    
-    return f"Quote for swapping {amount_in} {token_in}:\nExpected output: {quote.amount_out} {token_out}\nPrice impact: {quote.price_impact}%"
+    try:
+        quote = wallet.get_uniswap_quote(
+            token_in=token_in,
+            token_out=token_out, 
+            amount_in=str(int(amount_in)),  # Ensure amount is handled as uint256
+            amount_in_wei=amount_in_wei
+        )
+        
+        return f"Quote for swapping {amount_in} {token_in}:\nExpected output: {quote.amount_out} {token_out}\nPrice impact: {quote.price_impact}%"
+    except Exception as e:
+        return f"Error fetching quote: {str(e)}"
