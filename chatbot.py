@@ -14,6 +14,7 @@ from cdp_langchain.utils import CdpAgentkitWrapper
 from cdp_langchain.tools import CdpTool
 from pydantic import BaseModel, Field
 from cdp import *
+from uniswap_actions import get_uniswap_quote
 
 # Configure a file to persist the agent's CDP MPC Wallet Data.
 wallet_data_file = "wallet_data.txt"
