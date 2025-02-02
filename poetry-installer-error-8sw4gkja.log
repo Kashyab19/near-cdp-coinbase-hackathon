@@ -1,0 +1,16 @@
+ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+
+Traceback:
+
+  File "<stdin>", line 937, in main
+  File "<stdin>", line 574, in run
+  File "<stdin>", line 595, in install
+  File "/nix/store/nb21sc3npfc8gvazwnrjxpvb5d48jysx-python3-3.12.7/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "<stdin>", line 667, in make_env
+  File "<stdin>", line 653, in make_env
+  File "<stdin>", line 366, in make
+  File "<stdin>", line 389, in pip
+  File "<stdin>", line 386, in python
+  File "<stdin>", line 379, in run
