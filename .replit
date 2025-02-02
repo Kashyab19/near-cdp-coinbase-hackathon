@@ -8,3 +8,14 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["poetry run python chatbot.py"]
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 38943067
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "curl -sSL https://install.python-poetry.org | python3 - && poetry install && poetry run python chatbot.py"

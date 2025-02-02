@@ -19,6 +19,8 @@ from uniswap_actions import get_uniswap_quote
 # Configure a file to persist the agent's CDP MPC Wallet Data.
 wallet_data_file = "wallet_data.txt"
 
+# base-mainnet, 0x98D59767CD1335071A4E9b9d3482685C915131E8 (dream coin)
+
 
 def initialize_agent():
     """Initialize the agent with CDP Agentkit."""
